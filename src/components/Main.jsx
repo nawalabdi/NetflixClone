@@ -4,23 +4,25 @@ import {useEffect, useState} from 'react'
 import axios from 'axios'
 
 const Main = () => {
-  const [movies, setMovies]= useState([])
-  const movie = movies[Math.floor(Math.random() * movies.length)]
- 
-useEffect (() =>{
-axios.get(requests.requestPopular).then((response)=>{
-  setMovies(response.data.results)
-})
-}, [])
-// console.log(movies)
+  const [movies, setMovies] = useState([]);
 
-const truncateString = (str, num) => {
-  if (str.length > num) {
-  return str.slice(0,num) + '...';
-} else {
-  return str;
-}
-}
+  const movie = movies[Math.floor(Math.random() * movies.length)];
+
+  useEffect(() => {
+    axios.get(requests.requestPopular).then((response) => {
+      setMovies(response.data.results);
+    });
+  }, []);
+   console.log(movie);
+
+  const truncateString = (str, num) => {
+    if (str?.length > num) {
+      return str.slice(0, num) + '...';
+    } else {
+      return str;
+    }
+  };
+
   return (
     <div className='w-full h-[550px] text-white'>
       <div className='w-full h-full'>
