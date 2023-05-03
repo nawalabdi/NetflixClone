@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Signup = () => {
   return (
-    <>
+    
       <div className="w-full h-screen">
         <img
           className="hidden sm:block absolute w-full h-full object-cover"
@@ -47,7 +47,7 @@ const Signup = () => {
           </div>
         </div>
       </div>
-    </>
+    
   );
 };
 
